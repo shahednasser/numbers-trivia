@@ -13,6 +13,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1 id="welcomeMessage">Welcome to Numbers Trivia!</h1>
+        <div id="result" style={{marginBottom: '15px'}}></div>
         <Form />
       </header>
     </div>
