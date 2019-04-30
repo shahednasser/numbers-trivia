@@ -1,23 +1,23 @@
-import React, {useEffect} from 'react';
-import Form from './Form';
-import '../styles/App.css';
-
+import React, {useEffect, useState} from 'react'; 
+import Form from './Form'; 
+import '../styles/App.css'; 
+ 
 function App() {
-  useEffect(() => {
+  const [ welcomeMessage, setWelcomeMessage ] = useState(
+    "Welcome to Numbers Trivia!",
+  );
+useEffect(() => {
     setTimeout(() => {
-      let welcomeMessage = document.getElementById("welcomeMessage");
-      welcomeMessage.innerHTML = "Try Out Our Trivia Generator!";
+      setWelcomeMessage("Try Out Our Trivia Generator!");
     }, 3000);
   }, []);
-  return (
+return (
     <div className="App">
       <header className="App-header">
-        <h1 id="welcomeMessage">Welcome to Numbers Trivia!</h1>
-        <div id="result" style={{marginBottom: '15px'}}></div>
-        <Form />
+        <h1>{welcomeMessage}</h1>
       </header>
+      <Form/>
     </div>
   );
 }
-
 export default App;
