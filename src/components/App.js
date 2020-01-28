@@ -8,15 +8,18 @@ function App() {
   );
 useEffect(() => {
     setTimeout(() => {
-      setWelcomeMessage("Try Out Our Trivia Generator!");
+      setWelcomeMessage("Try Out Our Number Trivia Generator!");
     }, 3000);
   }, []);
 return (
     <div className="App">
-      <header className="App-header">
-        <h1>{welcomeMessage}</h1>
-      </header>
-      <Form/>
+        <header>
+            <a href="https://github.com/shahednasser/numbers-trivia" className="github-link">Github</a>
+        </header>
+        <div className="app-container">
+            <h1>{welcomeMessage}</h1>
+            <Form/>
+        </div>
     </div>
   );
 }

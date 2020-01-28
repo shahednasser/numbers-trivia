@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #282c34;
 }
 
 .App-logo {
@@ -8,8 +9,12 @@
   pointer-events: none;
 }
 
-.App-header {
-  background-color: #282c34;
+header {
+    text-align: right;
+    padding: 10px;
+}
+
+.app-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -21,6 +26,18 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.github-link {
+    color: rgba(255, 255, 255, .5);
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 1px solid;
+    transition: all .2s;
+}
+
+.github-link:hover {
+    color: #fff !important;
 }
 
 @keyframes App-logo-spin {
