@@ -40,6 +40,21 @@ header {
     color: #fff !important;
 }
 
+.app-container > h1 {
+    margin-bottom: 5px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#result {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

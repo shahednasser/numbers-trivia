@@ -4,6 +4,7 @@ const axios = require('axios');
 function Form(props){
     let [number, setNumber] = useState("random");
     let [type, setType] = useState("trivia");
+    let [result, setResult] = useState("");
 
     function onNumberChanged(e){
         let value = e.target.value.trim();
@@ -27,14 +28,15 @@ function Form(props){
         e.preventDefault();
         axios.get('http://numbersapi.com/' + number + '/' + type)
             .then(function(response){
-                let elm = document.getElementById('result');
-                elm.innerHTML = response.data;
+                setResult(response.data);
             }).catch(function(e){
                 console.log("error", e); //simple error handling
             });
     }
 
-  return (<form onSubmit={onSubmit}>
+  return (<div className="form-container">
+            {result && <span id="result">{result}</span>}
+            <form onSubmit={onSubmit}>
             <div>
               <input type="text" name="number" placeholder="Enter a number (Optional)"
                     value={number} onChange={onNumberChanged} />
@@ -48,7 +50,8 @@ function Form(props){
               </select>
             </div>
             <button type="submit">Generate</button>
-         </form>);
+         </form>
+  </div>);
 }
 
 export default Form;
